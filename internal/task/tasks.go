@@ -16,24 +16,24 @@ type Task struct {
 func NewTask(title, description string, deadline time.Time) *Task {
 	if title == "" {
 		return nil
-	} else if deadline.Before(time.Now()){
-		return nil 
+	} else if deadline.Before(time.Now()) {
+		return nil
 	}
 
 	return &Task{
-		ID: xid.New().String(),
-		Title: title,
+		ID:          xid.New().String(),
+		Title:       title,
 		Description: description,
-		Deadline: deadline,
+		Deadline:    deadline,
 	}
 }
 
 func (t *Task) UpdateTask(title, description string, deadline time.Time) {
-	if title != ""{
+	if title != "" {
 		t.Title = title
-	} else if description != ""{
+	} else if description != "" {
 		t.Description = description
-	} else if !deadline.IsZero(){
+	} else if !deadline.IsZero() {
 		t.Deadline = deadline
 	}
 }
