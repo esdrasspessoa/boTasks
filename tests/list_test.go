@@ -7,7 +7,7 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-func TestCreateTaskList(t *testing.T) {
+func TestCreateTaskLists(t *testing.T) {
 	assert := assert.New(t)
 
 	name := "My Task List"
